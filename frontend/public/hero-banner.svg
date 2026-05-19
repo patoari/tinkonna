@@ -1,0 +1,305 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a1f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Red accent gradient -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f10000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gold gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f5c518;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffdd57;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft glow -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Shirt shape -->
+    <symbol id="shirt" viewBox="0 0 60 60">
+      <path d="M10 8 L0 20 L12 22 L12 52 L48 52 L48 22 L60 20 L50 8 L38 14 C36 6 24 6 22 14 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Pants shape -->
+    <symbol id="pants" viewBox="0 0 50 70">
+      <path d="M5 0 L45 0 L45 35 L30 70 L20 70 L25 35 L5 35 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="25" y1="0" x2="25" y2="35" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <!-- Star shape -->
+    <symbol id="star" viewBox="0 0 20 20">
+      <polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7" fill="currentColor"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Animated background circles -->
+  <circle cx="900" cy="250" r="300" fill="#f10000" opacity="0.04">
+    <animate attributeName="r" values="280;320;280" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.04;0.07;0.04" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="150" r="180" fill="#ff6b35" opacity="0.03">
+    <animate attributeName="r" values="160;200;160" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Grid lines (subtle) -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="800" y1="0" x2="800" y2="500"/>
+    <line x1="1000" y1="0" x2="1000" y2="500"/>
+  </g>
+
+  <!-- ── LEFT SIDE: Floating clothing items ── -->
+
+  <!-- Floating shirt 1 -->
+  <g transform="translate(60, 80)" color="#f10000" opacity="0.7" filter="url(#glow)">
+    <use href="#shirt" width="55" height="55"/>
+    <animateTransform attributeName="transform" type="translate" values="60,80; 60,65; 60,80" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Floating pants 1 -->
+  <g transform="translate(140, 300)" color="#ff6b35" opacity="0.6" filter="url(#glow)">
+    <use href="#pants" width="45" height="63"/>
+    <animateTransform attributeName="transform" type="translate" values="140,300; 140,285; 140,300" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Floating shirt 2 (small) -->
+  <g transform="translate(30, 360)" color="#ffffff" opacity="0.2">
+    <use href="#shirt" width="35" height="35"/>
+    <animateTransform attributeName="transform" type="translate" values="30,360; 30,348; 30,360" dur="6s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ── RIGHT SIDE: Floating clothing items ── -->
+
+  <!-- Floating shirt right -->
+  <g transform="translate(1090, 100)" color="#f10000" opacity="0.65" filter="url(#glow)">
+    <use href="#shirt" width="55" height="55"/>
+    <animateTransform attributeName="transform" type="translate" values="1090,100; 1090,85; 1090,100" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.65;0.95;0.65" dur="4.5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Floating pants right -->
+  <g transform="translate(1020, 310)" color="#ff6b35" opacity="0.55" filter="url(#glow)">
+    <use href="#pants" width="45" height="63"/>
+    <animateTransform attributeName="transform" type="translate" values="1020,310; 1020,295; 1020,310" dur="5.5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Floating shirt right small -->
+  <g transform="translate(1130, 370)" color="#ffffff" opacity="0.18">
+    <use href="#shirt" width="38" height="38"/>
+    <animateTransform attributeName="transform" type="translate" values="1130,370; 1130,358; 1130,370" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ── FLOATING STARS ── -->
+  <g color="#f5c518" filter="url(#glow)">
+    <!-- Star 1 -->
+    <use href="#star" x="320" y="60" width="14" height="14" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </use>
+    <!-- Star 2 -->
+    <use href="#star" x="880" y="80" width="10" height="10" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <!-- Star 3 -->
+    <use href="#star" x="550" y="40" width="8" height="8" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <!-- Star 4 -->
+    <use href="#star" x="750" y="420" width="12" height="12" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3.5s" repeatCount="indefinite"/>
+    </use>
+    <!-- Star 5 -->
+    <use href="#star" x="420" y="430" width="9" height="9" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.15;0.5" dur="4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+
+  <!-- ── ANIMATED PARTICLES ── -->
+  <g fill="#f10000">
+    <circle cx="250" cy="180" r="2" opacity="0.5">
+      <animate attributeName="cy" values="180;160;180" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="950" cy="320" r="2.5" opacity="0.4">
+      <animate attributeName="cy" values="320;295;320" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="450" r="1.5" opacity="0.6">
+      <animate attributeName="cy" values="450;430;450" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" cy="90" r="2" opacity="0.4">
+      <animate attributeName="cy" values="90;70;90" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="140" r="1.8" opacity="0.5">
+      <animate attributeName="cy" values="140;120;140" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ── RED ACCENT LINE (animated) ── -->
+  <rect x="0" y="0" width="6" height="500" fill="url(#redGrad)">
+    <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1194" y="0" width="6" height="500" fill="url(#redGrad)">
+    <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ── HORIZONTAL ACCENT LINES ── -->
+  <rect x="220" y="0" width="760" height="3" fill="url(#redGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="220" y="497" width="760" height="3" fill="url(#redGrad)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ── MAIN CONTENT AREA ── -->
+
+  <!-- Badge pill -->
+  <g transform="translate(600, 130)">
+    <rect x="-110" y="-18" width="220" height="36" rx="18" fill="#f10000" opacity="0.15" stroke="#f10000" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#ff6b35" letter-spacing="2">
+      ✦ PREMIUM MEN'S FASHION ✦
+    </text>
+    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze"/>
+  </g>
+
+  <!-- Main headline line 1 -->
+  <text x="600" y="210" text-anchor="middle"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="58" font-weight="900"
+    fill="#ffffff"
+    letter-spacing="-1"
+    filter="url(#softGlow)">
+    YOUNA FASHION
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.3s" fill="freeze"/>
+  </text>
+
+  <!-- Red underline accent -->
+  <rect x="380" y="222" width="440" height="4" rx="2" fill="url(#redGrad)">
+    <animate attributeName="width" values="0;440" dur="1s" begin="0.8s" fill="freeze"/>
+    <animate attributeName="x" values="600;380" dur="1s" begin="0.8s" fill="freeze"/>
+  </rect>
+
+  <!-- Tagline -->
+  <text x="600" y="275" text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="22" font-weight="400"
+    fill="#cccccc"
+    letter-spacing="4">
+    EXPLORE OUR NEWEST COLLECTION
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.6s" fill="freeze"/>
+  </text>
+
+  <!-- Sub tagline -->
+  <text x="600" y="315" text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="15"
+    fill="#888888"
+    letter-spacing="2">
+    Shirts · Pants · Panjabi · T-Shirts · Accessories
+    <animate attributeName="opacity" values="0;1" dur="1s" begin="0.9s" fill="freeze"/>
+  </text>
+
+  <!-- ── CTA BUTTON ── -->
+  <g transform="translate(600, 385)">
+    <!-- Button background -->
+    <rect x="-80" y="-22" width="160" height="44" rx="22" fill="url(#redGrad)" filter="url(#glow)">
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.1s" fill="freeze"/>
+    </rect>
+    <!-- Button text -->
+    <text x="0" y="6" text-anchor="middle"
+      font-family="Arial, sans-serif"
+      font-size="14" font-weight="700"
+      fill="#ffffff" letter-spacing="2">
+      SHOP NOW →
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.1s" fill="freeze"/>
+    </text>
+    <!-- Pulse ring -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#f10000" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="30;55" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ── BOTTOM FEATURE BADGES ── -->
+  <g font-family="Arial, sans-serif" font-size="12" fill="#aaaaaa">
+    <!-- Badge 1 -->
+    <g transform="translate(340, 455)">
+      <circle cx="0" cy="-6" r="14" fill="#f10000" opacity="0.15"/>
+      <text x="0" y="-2" text-anchor="middle" font-size="14">👔</text>
+      <text x="0" y="14" text-anchor="middle" fill="#888">Wide Selection</text>
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.3s" fill="freeze"/>
+    </g>
+    <!-- Badge 2 -->
+    <g transform="translate(490, 455)">
+      <circle cx="0" cy="-6" r="14" fill="#f10000" opacity="0.15"/>
+      <text x="0" y="-2" text-anchor="middle" font-size="14">🏷️</text>
+      <text x="0" y="14" text-anchor="middle" fill="#888">Best Prices</text>
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.4s" fill="freeze"/>
+    </g>
+    <!-- Badge 3 -->
+    <g transform="translate(640, 455)">
+      <circle cx="0" cy="-6" r="14" fill="#f10000" opacity="0.15"/>
+      <text x="0" y="-2" text-anchor="middle" font-size="14">🚚</text>
+      <text x="0" y="14" text-anchor="middle" fill="#888">Fast Delivery</text>
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.5s" fill="freeze"/>
+    </g>
+    <!-- Badge 4 -->
+    <g transform="translate(790, 455)">
+      <circle cx="0" cy="-6" r="14" fill="#f10000" opacity="0.15"/>
+      <text x="0" y="-2" text-anchor="middle" font-size="14">⭐</text>
+      <text x="0" y="14" text-anchor="middle" fill="#888">Quality Assured</text>
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.6s" fill="freeze"/>
+    </g>
+  </g>
+
+  <!-- ── DECORATIVE CORNER BRACKETS ── -->
+  <g stroke="#f10000" stroke-width="2" fill="none" opacity="0.4">
+    <!-- Top left -->
+    <path d="M220,20 L220,50 M220,20 L260,20"/>
+    <!-- Top right -->
+    <path d="M980,20 L980,50 M980,20 L940,20"/>
+    <!-- Bottom left -->
+    <path d="M220,480 L220,450 M220,480 L260,480"/>
+    <!-- Bottom right -->
+    <path d="M980,480 L980,450 M980,480 L940,480"/>
+  </g>
+
+  <!-- ── SCANNING LINE EFFECT ── -->
+  <rect x="220" y="0" width="760" height="2" fill="url(#redGrad)" opacity="0.3">
+    <animate attributeName="y" values="0;500;0" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.4;0" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+</svg>

@@ -1,0 +1,31 @@
+/* App-level styles - main styles are in index.css */
+
+/* ─── Thermal Receipt — 58mm OPS/POS printer ─────────────────────────────── */
+@media print {
+  /* Receipt page: 58mm wide, auto height (cuts at content end) */
+  @page {
+    size: 58mm auto;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  /* Hide everything except the receipt when printing via useReactToPrint */
+  body > *:not(#print-mount) {
+    display: none !important;
+  }
+
+  .receipt-text {
+    width: 58mm !important;
+    font-size: 11px !important;
+  }
+
+  /* Ensure numbers (prices, totals) render in a monospace-friendly way */
+  .receipt-number {
+    font-variant-numeric: tabular-nums;
+  }
+}

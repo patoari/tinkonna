@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <!-- Gradient backgrounds -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a5298;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f0e68c;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f0e68c;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Star pattern -->
+    <g id="star">
+      <polygon points="0,-4 1,-1 4,0 1,1 0,4 -1,1 -4,0 -1,-1" fill="#ffffff"/>
+    </g>
+
+    <!-- Animations -->
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+      
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes slideIn {
+        from { transform: translateX(-100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      
+      @keyframes slideInRight {
+        from { transform: translateX(100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      
+      @keyframes scaleUp {
+        0% { transform: scale(0); opacity: 0; }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.5); }
+      }
+      
+      @keyframes swing {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+      }
+
+      .moon { animation: float 6s ease-in-out infinite; }
+      .star-twinkle { animation: twinkle 3s ease-in-out infinite; }
+      .text-main { animation: scaleUp 1s ease-out forwards; }
+      .text-sub { animation: slideIn 1.5s ease-out 0.5s forwards; opacity: 0; }
+      .man1 { animation: slideIn 1.5s ease-out 1s forwards; opacity: 0; }
+      .man2 { animation: slideInRight 1.5s ease-out 1.2s forwards; opacity: 0; }
+      .cloth1 { animation: float 4s ease-in-out infinite, slideIn 1.5s ease-out 1.4s forwards; opacity: 0; }
+      .cloth2 { animation: float 4.5s ease-in-out infinite, slideInRight 1.5s ease-out 1.6s forwards; opacity: 0; }
+      .cloth3 { animation: float 5s ease-in-out infinite, slideIn 1.5s ease-out 1.8s forwards; opacity: 0; }
+      .decoration { animation: swing 3s ease-in-out infinite; transform-origin: center top; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#skyGradient)"/>
+  
+  <!-- Stars -->
+  <g class="stars">
+    <use xlink:href="#star" x="100" y="80" class="star-twinkle" style="animation-delay: 0s"/>
+    <use xlink:href="#star" x="250" y="120" class="star-twinkle" style="animation-delay: 0.5s"/>
+    <use xlink:href="#star" x="400" y="60" class="star-twinkle" style="animation-delay: 1s"/>
+    <use xlink:href="#star" x="550" y="100" class="star-twinkle" style="animation-delay: 1.5s"/>
+    <use xlink:href="#star" x="700" y="70" class="star-twinkle" style="animation-delay: 2s"/>
+    <use xlink:href="#star" x="850" y="110" class="star-twinkle" style="animation-delay: 2.5s"/>
+    <use xlink:href="#star" x="1000" y="90" class="star-twinkle" style="animation-delay: 3s"/>
+    <use xlink:href="#star" x="1100" y="130" class="star-twinkle" style="animation-delay: 0.8s"/>
+    <use xlink:href="#star" x="150" y="150" class="star-twinkle" style="animation-delay: 1.2s"/>
+    <use xlink:href="#star" x="950" y="140" class="star-twinkle" style="animation-delay: 1.8s"/>
+  </g>
+
+  <!-- Moon with glow -->
+  <g class="moon">
+    <circle cx="950" cy="150" r="80" fill="url(#moonGlow)"/>
+    <circle cx="950" cy="150" r="50" fill="#f0e68c"/>
+    <circle cx="965" cy="140" r="8" fill="#e6d68a" opacity="0.5"/>
+    <circle cx="940" cy="165" r="6" fill="#e6d68a" opacity="0.5"/>
+  </g>
+
+  <!-- Mosque silhouette -->
+  <g fill="#1a2744" opacity="0.6">
+    <rect x="500" y="550" width="200" height="250"/>
+    <circle cx="600" cy="550" r="60"/>
+    <rect x="580" y="490" width="40" height="60"/>
+    <polygon points="600,450 620,490 580,490"/>
+    <rect x="450" y="600" width="40" height="200"/>
+    <circle cx="470" cy="600" r="15"/>
+    <polygon points="470,570 480,600 460,600"/>
+    <rect x="710" y="600" width="40" height="200"/>
+    <circle cx="730" cy="600" r="15"/>
+    <polygon points="730,570 740,600 720,600"/>
+  </g>
+
+  <!-- Decorative Islamic patterns -->
+  <g class="decoration">
+    <path d="M 100 200 Q 150 180 200 200" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.7"/>
+    <circle cx="150" cy="190" r="8" fill="#FFD700" opacity="0.7"/>
+  </g>
+  <g class="decoration" style="animation-delay: 0.5s">
+    <path d="M 1000 200 Q 1050 180 1100 200" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.7"/>
+    <circle cx="1050" cy="190" r="8" fill="#FFD700" opacity="0.7"/>
+  </g>
+
+  <!-- Man 1 (Left side) - SVG illustration -->
+  <g class="man1">
+    <rect x="150" y="400" width="200" height="300" rx="10" fill="#2c3e50"/>
+    <!-- Head -->
+    <circle cx="250" cy="480" r="35" fill="#d4a574"/>
+    <!-- Kufi cap -->
+    <ellipse cx="250" cy="465" rx="38" ry="20" fill="#8B4513"/>
+    <path d="M 212 465 Q 250 455 288 465" fill="#654321"/>
+    <!-- Body - Kurta -->
+    <rect x="210" y="515" width="80" height="120" rx="5" fill="#E8F5E9"/>
+    <line x1="250" y1="515" x2="250" y2="635" stroke="#4CAF50" stroke-width="2"/>
+    <!-- Arms -->
+    <rect x="180" y="530" width="30" height="80" rx="15" fill="#C8E6C9"/>
+    <rect x="290" y="530" width="30" height="80" rx="15" fill="#C8E6C9"/>
+    <!-- Hands -->
+    <circle cx="195" cy="610" r="12" fill="#d4a574"/>
+    <circle cx="305" cy="610" r="12" fill="#d4a574"/>
+    <!-- Pants -->
+    <rect x="215" y="635" width="35" height="65" fill="#795548"/>
+    <rect x="250" y="635" width="35" height="65" fill="#795548"/>
+    <rect x="150" y="400" width="200" height="300" rx="10" fill="none" stroke="#FFD700" stroke-width="3"/>
+  </g>
+
+  <!-- Man 2 (Right side) - SVG illustration -->
+  <g class="man2">
+    <rect x="850" y="400" width="200" height="300" rx="10" fill="#34495e"/>
+    <!-- Head -->
+    <circle cx="950" cy="480" r="35" fill="#c9a87c"/>
+    <!-- Kufi cap -->
+    <ellipse cx="950" cy="465" rx="38" ry="20" fill="#2C1810"/>
+    <path d="M 912 465 Q 950 455 988 465" fill="#1a0f08"/>
+    <!-- Body - Panjabi -->
+    <rect x="910" y="515" width="80" height="120" rx="5" fill="#FFF9C4"/>
+    <line x1="950" y1="515" x2="950" y2="635" stroke="#F57C00" stroke-width="2"/>
+    <circle cx="950" cy="530" r="3" fill="#F57C00"/>
+    <circle cx="950" cy="550" r="3" fill="#F57C00"/>
+    <circle cx="950" cy="570" r="3" fill="#F57C00"/>
+    <!-- Arms -->
+    <rect x="880" y="530" width="30" height="80" rx="15" fill="#FFF59D"/>
+    <rect x="990" y="530" width="30" height="80" rx="15" fill="#FFF59D"/>
+    <!-- Hands -->
+    <circle cx="895" cy="610" r="12" fill="#c9a87c"/>
+    <circle cx="1005" cy="610" r="12" fill="#c9a87c"/>
+    <!-- Pants -->
+    <rect x="915" y="635" width="35" height="65" fill="#5D4037"/>
+    <rect x="950" y="635" width="35" height="65" fill="#5D4037"/>
+    <rect x="850" y="400" width="200" height="300" rx="10" fill="none" stroke="#FFD700" stroke-width="3"/>
+  </g>
+
+  <!-- Cloth 1 (Traditional Kurta) - SVG illustration -->
+  <g class="cloth1">
+    <rect x="400" y="450" width="150" height="200" rx="8" fill="#E3F2FD"/>
+    <!-- Kurta shape -->
+    <path d="M 425 470 L 425 630 L 445 630 L 445 470 Z" fill="#2196F3"/>
+    <path d="M 455 470 L 455 630 L 475 630 L 475 470 Z" fill="#2196F3"/>
+    <rect x="420" y="465" width="60" height="170" rx="5" fill="#64B5F6"/>
+    <line x1="450" y1="465" x2="450" y2="635" stroke="#1976D2" stroke-width="3"/>
+    <!-- Collar -->
+    <path d="M 440 465 L 435 475 L 445 475 Z" fill="#1565C0"/>
+    <path d="M 460 465 L 455 475 L 465 475 Z" fill="#1565C0"/>
+    <!-- Decorative pattern -->
+    <circle cx="450" cy="500" r="3" fill="#FFD700"/>
+    <circle cx="450" cy="520" r="3" fill="#FFD700"/>
+    <circle cx="450" cy="540" r="3" fill="#FFD700"/>
+    <rect x="400" y="450" width="150" height="200" rx="8" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <text x="475" y="670" font-family="Arial, sans-serif" font-size="14" fill="#FFD700" text-anchor="middle" font-weight="bold">Kurta</text>
+  </g>
+
+  <!-- Cloth 2 (Panjabi) - SVG illustration -->
+  <g class="cloth2">
+    <rect x="650" y="450" width="150" height="200" rx="8" fill="#FFF3E0"/>
+    <!-- Panjabi shape -->
+    <rect x="670" y="465" width="60" height="170" rx="5" fill="#FF9800"/>
+    <line x1="700" y1="465" x2="700" y2="635" stroke="#E65100" stroke-width="3"/>
+    <!-- Collar -->
+    <path d="M 690 465 L 685 475 L 695 475 Z" fill="#BF360C"/>
+    <path d="M 710 465 L 705 475 L 715 475 Z" fill="#BF360C"/>
+    <!-- Buttons -->
+    <circle cx="700" cy="490" r="4" fill="#FFD700"/>
+    <circle cx="700" cy="510" r="4" fill="#FFD700"/>
+    <circle cx="700" cy="530" r="4" fill="#FFD700"/>
+    <circle cx="700" cy="550" r="4" fill="#FFD700"/>
+    <!-- Sleeves -->
+    <path d="M 665 480 L 655 500 L 665 520 Z" fill="#FFB74D"/>
+    <path d="M 735 480 L 745 500 L 735 520 Z" fill="#FFB74D"/>
+    <!-- Embroidery pattern -->
+    <path d="M 680 600 Q 700 590 720 600" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <path d="M 680 610 Q 700 600 720 610" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <rect x="650" y="450" width="150" height="200" rx="8" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <text x="725" y="670" font-family="Arial, sans-serif" font-size="14" fill="#FFD700" text-anchor="middle" font-weight="bold">Panjabi</text>
+  </g>
+
+  <!-- Cloth 3 (Sherwani) - SVG illustration -->
+  <g class="cloth3">
+    <rect x="525" y="500" width="150" height="200" rx="8" fill="#F3E5F5"/>
+    <!-- Sherwani shape -->
+    <rect x="545" y="515" width="60" height="170" rx="5" fill="#7B1FA2"/>
+    <!-- Split in middle -->
+    <line x1="575" y1="515" x2="575" y2="685" stroke="#4A148C" stroke-width="4"/>
+    <!-- Collar - Mandarin style -->
+    <rect x="560" y="515" width="30" height="8" fill="#4A148C"/>
+    <!-- Decorative buttons -->
+    <circle cx="565" cy="540" r="4" fill="#FFD700"/>
+    <circle cx="565" cy="560" r="4" fill="#FFD700"/>
+    <circle cx="565" cy="580" r="4" fill="#FFD700"/>
+    <circle cx="565" cy="600" r="4" fill="#FFD700"/>
+    <circle cx="585" cy="540" r="4" fill="#FFD700"/>
+    <circle cx="585" cy="560" r="4" fill="#FFD700"/>
+    <circle cx="585" cy="580" r="4" fill="#FFD700"/>
+    <circle cx="585" cy="600" r="4" fill="#FFD700"/>
+    <!-- Embroidery -->
+    <path d="M 550 650 Q 575 640 600 650" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <path d="M 550 660 Q 575 650 600 660" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <path d="M 550 670 Q 575 660 600 670" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <rect x="525" y="500" width="150" height="200" rx="8" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <text x="600" y="720" font-family="Arial, sans-serif" font-size="14" fill="#FFD700" text-anchor="middle" font-weight="bold">Sherwani</text>
+  </g>
+
+  <!-- Main Text -->
+  <g class="text-main">
+    <text x="600" y="280" font-family="'Times New Roman', serif" font-size="80" fill="#FFD700" text-anchor="middle" font-weight="bold" stroke="#8B4513" stroke-width="2">
+      Eid Mubarak
+    </text>
+  </g>
+
+  <!-- Subtitle -->
+  <g class="text-sub">
+    <text x="600" y="340" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" text-anchor="middle" font-style="italic">
+      May this Eid bring joy, peace and prosperity
+    </text>
+  </g>
+
+  <!-- Arabic Calligraphy Style Text -->
+  <g class="text-sub" style="animation-delay: 0.8s">
+    <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="#FFD700" text-anchor="middle">
+      عيد مبارك
+    </text>
+  </g>
+
+  <!-- Bottom decorative border -->
+  <rect x="0" y="750" width="1200" height="50" fill="#1a2744" opacity="0.8"/>
+  <rect x="0" y="750" width="1200" height="5" fill="#FFD700"/>
+</svg>
